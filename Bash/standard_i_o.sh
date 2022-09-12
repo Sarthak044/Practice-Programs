@@ -23,3 +23,31 @@ echo "${RANDOM} ${RANDOM}" >> ${FILE}
 echo
 echo "Contents :"
 cat ${FILE}
+
+# Redirect STDINto a program, using File descriptor 0
+
+read LINE 0< ${FILE}
+echo
+echo "LINE CONTAINS: ${LINE}"
+
+#Redirect STDOUT to a file using FIle Descriptor 1, overwriting the file 
+head -n3  /etc/passwd   1> ${FILE}
+echo
+echo "Contents of the ${FILE}: "
+cat ${FILE}
+
+#Redirect  STDERR to a file using File DEscriptor 2
+
+ERR_FILE="/tmp/data.err"
+head -n3 /etc/passwd /fakefile 2> ${ERR_FILE}
+cat ${ERR_FILE}
+
+# Redirect STDOUT and STDERR to a file 
+head -n3 /etc/passwd /fakefile &> ${FILE}
+echo
+echo "COntents of ${FILE}:"
+cat ${FILE}
+
+#Redirect STDOUT and STDERR through a pipe.
+echo
+head -n3 /etc/passwd /fakefile |& cat -n 
