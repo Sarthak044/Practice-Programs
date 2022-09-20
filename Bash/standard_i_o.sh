@@ -50,4 +50,22 @@ cat ${FILE}
 
 #Redirect STDOUT and STDERR through a pipe.
 echo
-head -n3 /etc/passwd /fakefile |& cat -n 
+head -n3 /etc/passwd /fakefile |& cat -n
+
+# Discard STDOUT via /dev/null
+echo
+echo "Discarding STOUT:"
+head -n3 /etc/passwd /fakefile > /dev/null
+
+#Discard STDERR 
+echo
+echo "Discarding STDERR:"
+head -n3 /etc/passwd /fakefile 2> /dev/null
+
+#Discard both STDOUT & STDERR
+echo
+echo "Discarding both STDOUT & STDERR:"
+head -n3 /etc/passwd /fakefile &> /dev/null
+
+# Clean Up
+rm ${FILE} ${ERR_FILE} &>/dev/null
