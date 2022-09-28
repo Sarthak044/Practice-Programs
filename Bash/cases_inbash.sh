@@ -29,6 +29,7 @@ case "${1}" in
         ;;
     *)
         echo 'Supply valid statement' >&2
+        echo 'Valid statements are : start | stop | status' >&2
         exit 1
         ;;
 esac

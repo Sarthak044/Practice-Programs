@@ -3,7 +3,6 @@
 #PORTFOLIO PROJECT
 
 #IMPORTS
-from unittest import result
 from colorama import Fore, Back, Style
 from prettytable import PrettyTable as pt
 import json
@@ -29,7 +28,7 @@ portfolio_value = 0.0
 
 table = pt(['Assest', 'Amount Owned', 'Value', 'Price', '1H', '24H', '7D'])
 
-with open("myportfolio.csv", "r") as csv_file:
+with open("/home/sk/Documents/codes/python/crypto/Projects/project1/myportfolio.csv", "r") as csv_file:
     csv_r = csv.reader(csv_file)
     for line in csv_r:
         if '\ufeff' in line[0]:
@@ -43,5 +42,31 @@ with open("myportfolio.csv", "r") as csv_file:
         quote_url = base_url + '/v1/cryptocurrency/quotes/latest?convert=' + local_currency + "&symbol=" + symbol
         request = requests.get(quote_url, headers=headers1)
         results = request.json()
+        
         #print(json.dumps(results, sort_keys=True, indent=4))
-        currency
+        
+        currency = results['data'][symbol]
+        name = currency['name']
+        quote = currency['quote'][local_currency]
+        
+        hour_change = round(quote['percent_change_1h'],1)
+        day_change = round(quote['percent_change_24h'],1)
+        week_change = round(quote['percent_change_7d'],1)
+        
+        price = quote['price']
+
+        value = float (price) * float(amount)
+        portfolio_value += value
+        
+        price_string = '{:,}'.format(round(price,2)) 
+        value_string = '{:,}'.format(round(value,2))
+
+        table.add_row([name +' (' + symbol + ')',
+                       amount,
+                       local_symbol+value_string,
+                       local_symbol+price_string,
+                       str(hour_change),
+                       str(day_change),
+                       str(week_change)])
+
+print(table)
