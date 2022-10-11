@@ -1,0 +1,6 @@
+version: '3.9'
+services:
+  testweb:
+    build: .
+    image: 'kalilinux/kali-rolling'
+    command: bash -c "apt update && apt install git -y && git clone https://github.com/LionSec/katoolin.git && cp katoolin/katoolin.py /usr/bin/katooli && chmod +x /usr/bin/katoolin"
