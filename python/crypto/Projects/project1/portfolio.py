@@ -57,6 +57,22 @@ with open("/home/sk/Documents/codes/python/crypto/Projects/project1/myportfolio.
 
         value = float (price) * float(amount)
         portfolio_value += value
+
+        if hour_change > 0:
+            hour_change = Back.GREEN + str(hour_change) + '%' + Style.RESET_ALL
+        else:
+            hour_change = Back.RED + str(hour_change) + '%' + Style.RESET_ALL
+        
+        if day_change > 0:
+            day_change = Back.GREEN + str(day_change) + '%' + Style.RESET_ALL
+        else:
+            day_change = Back.RED + str(day_change) + '%' + Style.RESET_ALL
+
+        if week_change > 0:
+            week_change = Back.GREEN + str(week_change) + '%' + Style.RESET_ALL
+        else:
+            week_change = Back.RED + str(week_change) + '%' + Style.RESET_ALL
+
         
         price_string = '{:,}'.format(round(price,2)) 
         value_string = '{:,}'.format(round(value,2))
@@ -70,3 +86,8 @@ with open("/home/sk/Documents/codes/python/crypto/Projects/project1/myportfolio.
                        str(week_change)])
 
 print(table)
+print()
+
+portfolio_value_string = '{:,}'.format(round(portfolio_value,2))
+print("Total Portoflio Value: " + Back.GREEN + local_symbol + portfolio_value_string + Style.RESET_ALL)
+print() 
