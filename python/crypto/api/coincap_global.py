@@ -19,17 +19,17 @@ results = request.json()
 print(json.dumps(results,sort_keys=True, indent=4))
 
 # Fetching individual data
-data = results["data"]
-btc_dominance = data["btc_dominance"]
-eth_dominance = data["eth_dominance"]
-total_marketcap = data["quote"][local_currency]["total_market_cap"]
-total_vol = data["quote"][local_currency]["total_volume_24h"]
+# data = results["data"]
+# btc_dominance = data["btc_dominance"]
+# eth_dominance = data["eth_dominance"]
+# total_marketcap = data["quote"][local_currency]["total_market_cap"]
+# total_vol = data["quote"][local_currency]["total_volume_24h"]
 
-# Rounding off for clean view
-total_marketcap = round(total_marketcap, 2)
-btc_dominance = round(btc_dominance, 2)
-eth_dominance = round(eth_dominance, 2)
-total_vol = round(total_vol, 2)
+# # Rounding off for clean view
+# total_marketcap = round(total_marketcap, 2)
+# btc_dominance = round(btc_dominance, 2)
+# eth_dominance = round(eth_dominance, 2)
+# total_vol = round(total_vol, 2)
 
-total_marketcap_string = local_symbol + '{:,}'.format(total_marketcap)
-total_vol_string = local_symbol + '{:,}'.format(total_vol)
+# total_marketcap_string = local_symbol + '{:,}'.format(total_marketcap)
+# total_vol_string = local_symbol + '{:,}'.format(total_vol)
