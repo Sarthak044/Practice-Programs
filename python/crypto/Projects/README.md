@@ -5,4 +5,4 @@ Project 2 --> Alerting System\
 Project 3 --> Top Cryptos\
 Project 4 --> All Market price value\
 Note:\
-There's an issue with Project 4. Will solve it soon\
+There's an issue with Project 4. Will solve it soon
