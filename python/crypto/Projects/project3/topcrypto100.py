@@ -26,7 +26,7 @@ else:
     if choice == '1':
         sort = 'market_cap'
     if choice == '2':
-        sort = 'percent_change_2h'
+        sort = 'percent_change_24h'
     if choice == '3':
         sort = 'volume_24h'
     if choice == '4':
@@ -53,12 +53,24 @@ else:
 
         if hour_change is not None:
             hour_change = round(hour_change,2)
+            if hour_change > 0:
+                hour_change = Back.GREEN + str(hour_change) + '%' + Style.RESET_ALL
+            else:
+                hour_change = Back.RED + str(hour_change) + '%' + Style.RESET_ALL      
 
         if day_change is not None:
-            day_change = round(day_change,2)    
+            day_change = round(day_change,2)
+            if day_change > 0:
+                day_change = Back.GREEN + str(day_change) + '%' + Style.RESET_ALL
+            else:
+                day_change = Back.RED + str(day_change) + '%' + Style.RESET_ALL    
         
         if week_change is not None:
             week_change = round(week_change,2)
+            if week_change > 0:
+                week_change = Back.GREEN + str(week_change) + '%' + Style.RESET_ALL
+            else:
+                week_change = Back.RED + str(week_change) + '%' + Style.RESET_ALL
 
         if volume is not None:
             volume_string = '{:,}'.format(round(volume, 2))
@@ -78,4 +90,3 @@ else:
     print()
     print(table)
     print()
-    
