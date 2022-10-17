@@ -1,4 +1,4 @@
-<h1>INDEX<h1>
+<h1>INDEX</h1>
 Project 1 --> Portfolio Project  
 Project 2 --> Alerting System   
 Project 3 --> Top Cryptos  
