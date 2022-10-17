@@ -1,8 +1,9 @@
-<h1>INDEX</h1>
-Project 1 --> Portfolio Project  
-Project 2 --> Alerting System   
-Project 3 --> Top Cryptos  
-Project 4 --> All Market price value  
+# INDEX
 
-Note:  
-There's an issue with Project 4. Will solve it soon.   
+Project 1 --> Portfolio Project\
+Project 2 --> Alerting System\
+Project 3 --> Top Cryptos\
+Project 4 --> All Market price value\
+
+Note:\
+There's an issue with Project 4. Will solve it soon.\   
