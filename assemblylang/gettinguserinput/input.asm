@@ -1,3 +1,9 @@
+; sections names: 
+; .data --> pre defined variables
+; .bss --> reserve section for bytes
+; .text --> main code
+
+
 section .data
     text1 db "What is your name?",10
     text2 db "Hello, "
