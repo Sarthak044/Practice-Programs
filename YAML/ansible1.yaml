@@ -1,7 +1,0 @@
-# First 
-
-- hosts: linux
-  user: ansible
-  become: yes  #for sudo
-  connection: ssh
-  gather_facts: yes

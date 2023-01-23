@@ -1,0 +1,10 @@
+# First 
+
+- hosts: linux
+  user: ansible
+  become: yes  #for sudo
+  connection: ssh
+  gather_facts: yes
+  tasks:
+    name: install apache2
+    action: yum name=apache2 state=installed
