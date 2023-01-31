@@ -1,0 +1,41 @@
+# lets write some YAML
+
+# its a key value pair 
+
+
+courses: 
+  course_name: "Django backend developer"
+  version: 1.5
+  price: &price 199   #declaring a variable
+  is_public: true
+  release_date: 2021-04-05 12:23:22
+  pre_enroll: null
+  tags: 
+    - python
+    - webdev
+    - mysql
+  course_ta: ["anirudh", "anurag", "rakesh"]
+  ta_details: 
+    - name: "anirudh"
+      email: "ani@iiioo.com" 
+      role: "content admin"
+    - name: "anurag"
+      email: "anurag"
+      role: "discussion admin"
+    - {name: "rakesh", email: "rak@llls.com", role: "devops"}
+  short_desc: >
+    here is a short descripton 
+    for django course
+  long_desc: |
+    Now we can store 
+      all indentations
+    and related things 
+  process_payment: *price  # reference the variable
+
+  adv: &adv
+    mykey: myval
+
+another_adv:
+  one: two
+  three: four
+  <<: *adv

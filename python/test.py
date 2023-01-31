@@ -1,3 +1,6 @@
-x = input()
+from time import sleep
 
-print (int(x+23))
+
+for i in range(0,6):
+    print(i)
+    sleep(1)
