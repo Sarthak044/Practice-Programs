@@ -1,18 +1,15 @@
 section .data
-    x db 10  
+    ;x db 10  
 
 section .text
     global _start
 
 _start:
-    mov eax, [x]    
-    cmp eax, 0     
-    je else         
-    mov byte [x], 5 
-    jmp end         
-
-else:
-    mov byte [x], 1 
-
-end:
+    cmp dword [x], 0
+    jne else
+    mov dword [x], 5
+    jmp end
+    else:
+        mov dword [x], 1
+    end:
     
